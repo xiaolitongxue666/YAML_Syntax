@@ -1,0 +1,37 @@
+#pip symbol so the line breaks will actually stay
+multilineString1: | 
+  this is a multiline string
+  and this is the next line
+  next line 
+
+#as single line
+multilineString2: > 
+  this is a single line string,
+  that should be all on one line.
+  some other stuff
+
+##example about multi lines with config part
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: mosquitto-config-file
+data:
+  mosquitto.conf: |
+    log_dest stdout
+    log_type all
+    log_timestamp true
+    listener 9001
+
+#example about multi lines with command
+command:
+  - sh
+  - -c
+  - |
+    #!/usr/bin/env bash -e
+    http () {
+        local path="${1}"
+        set -- -XGET -s --fail
+        # some more stuff here 
+        curl -k "$@" "http://localhost:5601${path}"
+    }
+    http "/app/kibana"

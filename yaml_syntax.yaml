@@ -1,0 +1,46 @@
+# use '#' for comments
+# key value pairs
+app_version_01: user-authentication # you can use quotes or no quotes for string
+app_version_02: "user-authentication" # you can use quotes or no quotes for string
+app_version_03: 'user-authentication' # you can use quotes or no quotes for string
+app_version_04: 'user-authentication \n' # use special charters
+app_version_05: "user-authentication \n" # use special charters
+port: 9000
+version: 1.7
+
+#objects
+microservice:
+  app: user-authentication
+  port: 9000
+  version: 1.7
+
+#lists
+microservices:
+  - app: user-authentication
+    port: 9000
+    version: 1.7
+  - app: shopping-cart
+    port: 9002
+    version: 1.9
+    versions1:
+    - 1.9
+    - 2.0
+    - 2.1
+    versions2: [1.9, 2.0, 2.1]
+    versions3: ["1.9", 2.0, 2.1]
+
+microservices2:
+  - user-authentication
+  - shopping-cart
+
+#booleans
+microservices3:
+  - app: user-authentication
+    port: 9000
+    version: 1.7
+    deployed_01: true
+    deployed_02: false
+    deployed_03: yes
+    deployed_04: no    
+    deployed_05: on
+    deployed_06: off        

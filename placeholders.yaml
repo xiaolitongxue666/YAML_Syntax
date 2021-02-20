@@ -1,0 +1,4 @@
+metadata:
+  name: {{ .Values.service.name}}
+spec:
+  app: {{ .Values.service.app}}  
